@@ -2,7 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dnsuo7cko7v72" path="res://settings.gd" id="1_x2hje"]
 
-[node name="settings" type="Control" unique_id=1499222710]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2hje"]
+bg_color = Color(0, 0, 0, 0.5019608)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="SettingsControl" type="Control" unique_id=1499222710]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -12,25 +19,72 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x2hje")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=146816566]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1046572278]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1059010384]
-custom_minimum_size = Vector2(500, 500)
+[node name="SettingsContainer" type="PanelContainer" parent="MarginContainer" unique_id=146816566]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_x2hje")
 
-[node name="fov_label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=884664398]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/SettingsContainer" unique_id=44433106]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/SettingsContainer/MarginContainer" unique_id=1447310125]
+layout_mode = 2
+
+[node name="HeaderHB" type="HBoxContainer" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer" unique_id=1606337897]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HeaderLB" type="Label" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/HeaderHB" unique_id=2145564398]
+custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer" unique_id=1103331234]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="SettingsVB" type="VBoxContainer" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer" unique_id=1059010384]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="FovHB" type="HBoxContainer" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/SettingsVB" unique_id=614058880]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="FovLB" type="Label" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/SettingsVB/FovHB" unique_id=884664398]
+layout_mode = 2
+size_flags_horizontal = 4
 text = "FOV:"
 
-[node name="fov_slider" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=957013702]
+[node name="FovHS" type="HSlider" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/SettingsVB/FovHB" unique_id=957013702]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
 min_value = 60.0
 max_value = 120.0
 value = 75.0
+
+[node name="FovValLB" type="Label" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/SettingsVB/FovHB" unique_id=754882400]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+text = "120"
+horizontal_alignment = 1

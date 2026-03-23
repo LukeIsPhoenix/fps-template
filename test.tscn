@@ -15,6 +15,9 @@ sky = SubResource("Sky_8uh7m")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_37kl0"]
+size = Vector3(1, 4.3359375, 14.43335)
+
 [node name="Node3D" type="Node3D" unique_id=327026680]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1147694825]
@@ -52,3 +55,9 @@ size = Vector3(1, 10, 20.5)
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 0, 0, 9)
 use_collision = true
 size = Vector3(1, 10, 21)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=318119287]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=12922001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.008181, 2.748574, 2.144165)
+shape = SubResource("BoxShape3D_37kl0")

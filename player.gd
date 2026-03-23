@@ -26,7 +26,7 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		var settings = $settings
 		settings.visible = !settings.visible
-		settings.get_node("PanelContainer/VBoxContainer/fov_slider").value = FOV
+		settings.get_node("MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/SettingsVB/FovHB/FovHS").value = FOV
 		if settings.visible:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			get_tree().paused = true
