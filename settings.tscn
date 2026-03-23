@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://djf7keuxeyyoh"]
 
-[ext_resource type="Script" uid="uid://dnsuo7cko7v72" path="res://menu.gd" id="1_b3bc3"]
+[ext_resource type="Script" uid="uid://dnsuo7cko7v72" path="res://settings.gd" id="1_x2hje"]
 
-[node name="menu" type="Control" unique_id=1499222710]
+[node name="settings" type="Control" unique_id=1499222710]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_b3bc3")
+script = ExtResource("1_x2hje")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=146816566]
 layout_mode = 0
@@ -29,7 +29,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "FOV:"
 
-[node name="HSlider" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=957013702]
+[node name="fov_slider" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=957013702]
 layout_mode = 2
 min_value = 60.0
 max_value = 120.0
