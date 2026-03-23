@@ -10,6 +10,7 @@ process_mode = 3
 script = ExtResource("1_4flbx")
 MAX_SPEED = 7.0
 MAX_SPRINT_SPEED = 12.0
+SPRINT_FOV_MULTIPLIER = 1.15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2046547239]
 shape = SubResource("CapsuleShape3D_4flbx")
