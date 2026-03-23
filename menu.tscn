@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://djf7keuxeyyoh"]
+
+[ext_resource type="Script" uid="uid://dnsuo7cko7v72" path="res://menu.gd" id="1_b3bc3"]
+
+[node name="menu" type="Control" unique_id=1499222710]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3bc3")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=146816566]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1059010384]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+
+[node name="fov_label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=884664398]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "FOV:"
+
+[node name="HSlider" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=957013702]
+layout_mode = 2
+min_value = 60.0
+max_value = 120.0
+value = 75.0
